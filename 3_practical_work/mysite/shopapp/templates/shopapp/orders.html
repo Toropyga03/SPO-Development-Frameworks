@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><title>Orders</title></head>
+<body>
+    <h1>Orders</h1>
+    <ul>
+        {% for order in orders %}
+            <li>
+                <strong>Order {{ order.id }}</strong> by {{ order.user.username }}<br>
+                Address: {{ order.delivery_address }}<br>
+                Products:
+                <ul>
+                    {% for product in order.products.all %}
+                        <li>{{ product.name }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% empty %}
+            <li>No orders found.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'shopapp:index' %}">Back</a>
+</body>
+</html>

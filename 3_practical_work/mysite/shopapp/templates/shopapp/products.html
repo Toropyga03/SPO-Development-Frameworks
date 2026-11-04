@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Products</title></head>
+<body>
+    <h1>Products</h1>
+    <ul>
+        {% for product in products %}
+            <li>{{ product.name }} - ${{ product.price }} (Stock: {{ product.stock }})</li>
+        {% empty %}
+            <li>No products found.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'shopapp:index' %}">Back</a>
+</body>
+</html>
