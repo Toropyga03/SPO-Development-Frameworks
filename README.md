@@ -1,1 +1,1 @@
-Directory for SPO-Development-Frameworks homeworks
+Repository for SPO-Development-Frameworks homeworks
